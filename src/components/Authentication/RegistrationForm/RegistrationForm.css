@@ -1,3 +1,17 @@
 .RegistrationForm {
     width: 30em;
 }
+
+.LoginLink {
+    padding-right: 2rem;
+    font-size: 2rem;
+    color: #FFF;
+    opacity: 0.3;
+    padding-bottom: 6.5rem;
+    cursor: pointer;
+}
+
+.LoginLink p {
+    display: inline-block;
+    padding-left: 1rem;
+}
