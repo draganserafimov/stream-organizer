@@ -5,6 +5,7 @@ import classes from './RegistrationForm.css';
 import Input from '../../UI/Input/Input';
 import Button from '../../UI/Button/Button';
 import Auxiliary from '../../../hoc/Auxiliary/Auxiliary';
+import axios from '../../../axios/stream-organizer-api';
 
 class RegistrationForm extends Component {
     state = {
@@ -66,6 +67,23 @@ class RegistrationForm extends Component {
 
     goToLogin = () => {
         this.props.history.push('/')
+    }
+
+    register = (event) => {
+        event.preventDefault();
+
+        let register = {
+            username: this.state.username,
+            email: this.state.email,
+            password: this.state.password,
+            repeatPassword: this.state.repeatPassword
+        };
+
+        axios.post("/register", register).then(data => {
+            console.log(data);
+        }).catch(error => {
+            console.log(error);
+        });
     }
 
     render() {
